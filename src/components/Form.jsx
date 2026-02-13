@@ -16,7 +16,7 @@ function Form() {
   //
   const handleSubmit = (ev) => {
     ev.preventDefault();
-    console.log(formData);
+    console.log({ ...formData, foodMenu: menuItem });
     setUserList((prev) => [...prev, formData]);
     setFormData({
       username: "",
@@ -42,7 +42,6 @@ function Form() {
   const handleChange = (event) => {
     // console.log(event.target.name, event.target.value);
     const { name, value } = event.target;
-
     setFormData((prev) => {
       return { ...prev, [name]: value, foodMenu: menuItem };
     });
